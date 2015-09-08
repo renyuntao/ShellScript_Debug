@@ -13,6 +13,7 @@ if [ -s compile_error ]
 then 
 	echo "Compile failed!"
 	vim compile_error
+	vim ${1}.cxx
 	exit 1
 else
 	echo "Compile successfully!"
@@ -21,6 +22,7 @@ else
 	then
 		echo "Link failed!"
 		vim link_error
+		vim ${1}.cxx
 		exit 1
 	fi
 	echo "Next execute program:"
