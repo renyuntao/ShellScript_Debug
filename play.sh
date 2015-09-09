@@ -1,6 +1,6 @@
 #!/bin/bash
 #Date: 2015-09-07
-#Author: YtRen
+#Author: YtRen <rytubuntulinux@gmail.com>
 #Usage:This shell script suport *.cxx,*.cpp,*.c file only,
 # Suppose you have C++ source file named test.cxx,
 # then you can use this script as follows:
