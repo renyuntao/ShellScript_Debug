@@ -1,6 +1,9 @@
 #Usage
-This shell script was wriiten only for *.cpp file.For example,suppose you have a file named test.cpp,
-then you can use this script as follows:    
-```$ ./play.sh test```    
+Suppose you have C++ source file named test.cxx,  
+then you can use this script as follows:  
+```$ ./play.sh test cxx```  
+Similarly,if you have a file named test.c,then you can use  
+this script as follows:  
+```$ ./play.sh test c```  
 #Learn more     
 You can learn more [here](http://www.studyandshare.info/compile_shell_script.html).
