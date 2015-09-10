@@ -1,5 +1,5 @@
 #Usage  
-&nbsp;&nbsp;This shell script suport ```*.cxx```,```*.cpp```,```*.c``` file only,
+&nbsp;&nbsp;&nbsp;This shell script suport ```*.cxx```,```*.cpp```,```*.c``` file only,
 Suppose you have C++ source file named test.cxx,  
 then you can use this script as follows:  
 ```$ ./play.sh test.cxx```  
