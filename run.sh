@@ -17,7 +17,7 @@ prefix=$(echo ${1} | cut -d . -f 1)
 suffix=$(echo ${1} | cut -d . -f 2)
 if [ ${suffix} = "cxx" ]
 then
-	g++ -c ${prefix}.cxx 2> compile_error
+	g++ -std=gnu++11 -c ${prefix}.cxx 2> compile_error
 	if [ -s compile_error ]
 	then 
 		echo "Compile failed!"
@@ -34,12 +34,13 @@ then
 			vim ${prefix}.cxx
 			exit 1
 		fi
+		echo "Link successfully!"
 		echo "Next execute program:"
 		./${prefix}
 	fi
 elif [ ${suffix} = "cpp" ]
 then
-	g++ -c ${prefix}.cpp 2> compile_error
+	g++ -std=gnu++11 -c ${prefix}.cpp 2> compile_error
 	if [ -s compile_error ]
 	then 
 		echo "Compile failed!"
@@ -56,12 +57,13 @@ then
 			vim ${prefix}.cpp
 			exit 1
 		fi
+		echo "Link successfully!"
 		echo "Next execute program:"
 		./${prefix}
 	fi
 elif [ ${suffix} = "c" ]
 then
-	g++ -c ${prefix}.c 2> compile_error
+	gcc -c ${prefix}.c 2> compile_error
 	if [ -s compile_error ]
 	then 
 		echo "Compile failed!"
@@ -70,7 +72,7 @@ then
 		exit 1
 	else
 		echo "Compile successfully!"
-		g++ -o ${prefix} ${prefix}.o 2> link_error
+		gcc -o ${prefix} ${prefix}.o 2> link_error
 		if [ $? != 0 ]
 		then
 			echo "Link failed!"
@@ -78,6 +80,7 @@ then
 			vim ${prefix}.c
 			exit 1
 		fi
+		echo "Link successfully!"
 		echo "Next execute program:"
 		./${prefix}
 	fi
