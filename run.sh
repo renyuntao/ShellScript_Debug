@@ -1,14 +1,14 @@
 #!/bin/bash
 #Date: 2015-09-07
-#Update: 2015-09-10
+#Last update: 2015-10-27
 #Author: YtRen <rytubuntulinux@gmail.com>
 #Usage:This shell script suport *.cxx,*.cpp,*.c file only,
 # Suppose you have C++ source file named test.cxx,
 # then you can use this script as follows:
-# $ ./play.sh test.cxx
+# $ run test.cxx
 # Similarly,if you have a file named test.c,then you can use
 # this script as follows:
-# $ ./play.sh test.c
+# $ run test.c
 if [ -e compile_error ]
 then
 	rm compile_error
@@ -63,7 +63,7 @@ then
 	fi
 elif [ ${suffix} = "c" ]
 then
-	gcc -c ${prefix}.c 2> compile_error
+	gcc -c -std=c99 ${prefix}.c 2> compile_error
 	if [ -s compile_error ]
 	then 
 		echo "Compile failed!"
